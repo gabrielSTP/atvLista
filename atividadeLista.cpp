@@ -219,18 +219,21 @@ struct List {
         novoValor->prox = cauda;
         size++;
         return cauda;
-        
+
     }
 
     Node* PopN(dado valor) { //Apaga valor N da lista.
         if (size < valor) {
             NULL;
         }
+        else if (valor == 1) {
+            popFront();
+        }
         else {
-            
+
             Node* posicao = cabeca;
-            int cont = 0;
-            while (cont > valor) {
+            int cont = 1;
+            while (cont +1 != valor) {
                 posicao = posicao->prox;
                 cont++;
             }
@@ -260,8 +263,8 @@ int main() {
     //l.popSecond();
     //l.pushBackS();
     //l.pushBackN(5);
-    //l.pushPenul(59);
-    l.PopN(2);
+    l.pushPenul(59);
+    l.PopN(1);
     l.print();
     printf("Tamanho da lista: %d\n", l.size);
     return 0;
